@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
-#include <string.h>
-#include "node.cpp"
+#include <string>
+#include "node.h"
 
 using namespace std;
 #ifndef _Expenses_h
@@ -14,7 +14,7 @@ class Expenses {
     public:
     //constructor
     Expenses(){
-        head = NULL;
+        head = new node(0);
     }
 
     //destructor
@@ -25,6 +25,8 @@ class Expenses {
             head = p->get_next_node();
             delete p;
         }
+        delete head;
+        head = NULL;
     }
 
     //add a node

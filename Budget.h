@@ -1,11 +1,11 @@
 #include <iostream>
 #include <vector>
-#include <string.h>
-#include "node.cpp"
-#include "Income.cpp"
-#include "Expenses.cpp"
-#include "Longterm.cpp"
-#include "Purchase_Goals.cpp"
+#include <string>
+#include "node.h"
+#include "Income.h"
+#include "Expenses.h"
+#include "Longterm.h"
+#include "Purchase_Goals.h"
 
 using namespace std;
 #ifndef _Budget_h
@@ -65,6 +65,16 @@ class Budget {
     void add_purchasing_goal(float amount, string item){
         purchase_goals->add_goal(amount);
     }
-};
 
+    //Calculate Budget
+    void calculate_budget(){
+        float total_monthly_income;
+        float total_monthly_expenses;
+        float total_longterm_expenses;
+        float total_purchasing_goals;
+
+        budget = bank_balance - total_monthly_expenses - total_longterm_expenses - total_purchasing_goals + total_monthly_income;
+        cout << "Your Budget for this month is " << budget << endl;
+    }
+};
 #endif

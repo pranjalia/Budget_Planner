@@ -1,34 +1,37 @@
 #include <iostream>
 #include <vector>
-#include <string.h>
-#include "node.cpp"
+#include <string>
+#include "node.h"
 
 using namespace std;
-#ifndef _PurchaseGoals_h
-#define _PurchaseGoals_h
+#ifndef _Longterm_h
+#define _Longterm_h
 
-class Purchase_Goals {
+class Longterm{
     private:
     node* head;
 
     public:
     //constructor
-    Purchase_Goals(){
-        head = NULL;
+    Longterm () {
+        head = new node(0);
     }
-    
+
     //destructor
-    ~Purchase_Goals(){
+    ~Longterm(){
         node *p;
         while (head != NULL) {
             p = head;
             head = p->get_next_node();
             delete p;
+            p = NULL;
         }
+        delete head;
+        head = NULL;
     }
 
     //add a node
-    void add_goal(float amount){
+    void add_expense(float amount){
         node *p = head;
         while (p != NULL){
             if (p->get_next_node() == NULL){
@@ -40,5 +43,4 @@ class Purchase_Goals {
         }
     }
 };
-
 #endif

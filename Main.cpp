@@ -1,9 +1,8 @@
 #include <iostream>
 #include <vector>
-#include <string.h>
 #include <string>
-#include "Budget.cpp"
-#include "Account.cpp"
+#include "Budget.h"
+#include "Account.h"
 
 using namespace std;
 
@@ -36,8 +35,7 @@ int main(int argc, char** argv) {
     long_term_bills(user);
     purchasing_goals(user);
 
-    //now we will write the results
-    //modify dollars and shit withcolours and bold
+    user.get_budget()->calculate_budget();
 }
 
 void monthly_income(Account& user){

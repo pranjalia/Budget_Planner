@@ -1,8 +1,8 @@
 #include <iostream>
 #include <vector>
-#include <string.h>
-#include "node.cpp"
-#include "Budget.cpp"
+#include <string>
+#include "node.h"
+#include "Budget.h"
 
 using namespace std;
 #ifndef _Account_h
