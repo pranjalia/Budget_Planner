@@ -4,6 +4,9 @@
 
 using namespace std;
 
+#ifndef _node_h
+#define _node_h
+
 class node{
     private:
     float data;
@@ -23,4 +26,11 @@ class node{
     node *get_next_node(){
         return next;
     }
+
+    void set_next_node(float d){
+        next = new node(d);
+    }
+
 };
+
+#endif
